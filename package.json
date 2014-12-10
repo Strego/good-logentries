@@ -22,7 +22,10 @@
   },
   "homepage": "https://github.com/colonyamerican/good-logentries",
   "dependencies": {
-    "good-reporter": "^3.0.0",
+    "good-reporter": "^3.0.1",
     "node-logentries": "^0.1.4"
+  },
+  "peerDependencies": {
+    "good": "^5.0.0"
   }
 }
