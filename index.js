@@ -57,6 +57,11 @@ GoodLogEntries.prototype._report = function(event, eventData) {
     level = 'debug';
   } else if (event === 'error') {
     level = 'error';
+
+    if (eventData.request) {
+      delete eventData.request;
+    }
+
   } else if (event === 'log') {
 
     if (Array.isArray(eventData.tags)) {
