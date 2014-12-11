@@ -56,7 +56,12 @@ GoodLogEntries.prototype._report = function(event, eventData) {
   if (event === 'ops') {
     level = 'debug';
   } else if (event === 'error') {
-    level = 'exception';
+    level = 'error';
+
+    if (eventData.request) {
+      delete eventData.request;
+    }
+
   } else if (event === 'log') {
 
     if (Array.isArray(eventData.tags)) {
@@ -66,7 +71,7 @@ GoodLogEntries.prototype._report = function(event, eventData) {
       level = 'info';
     }
 
-  } else if (event === 'request') {
+  } else if (event === 'response') {
     if (eventData.statusCode >= 500) {
       level = 'error';
     } else if (eventData.statusCode >= 400) {
