@@ -8,7 +8,7 @@ function getLogLevelFromTags(tags) {
   var levels = [ 'emerg', 'alert', 'crit', 'error', 'warn', 'notice', 'info', 'debug' ];
 
   for (var i = 0; i < levels.length; i++) {
-    if (tags.contains(levels[i])) {
+    if (tags.indexOf(levels[i]) != -1) {
       return levels[i];
     }
   }
