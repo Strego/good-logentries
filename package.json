@@ -26,6 +26,6 @@
     "node-logentries": "^0.1.4"
   },
   "peerDependencies": {
-    "good": "^5.0.0"
+    "good": ">5.0.0"
   }
 }
